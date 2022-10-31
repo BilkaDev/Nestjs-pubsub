@@ -45,3 +45,8 @@ gcloud components update
  gcloud beta emulators pubsub start --project=test
 ```
 --project=pojectId
+
+### Start nestjs application:
+```
+nest start
+```
