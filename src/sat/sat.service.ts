@@ -35,7 +35,11 @@ export class SatService {
     }
 
     private async publishMessage(topicName: string, data: DataPayload): Promise<void> {
-        await this.pubsub.emit(topicName, data,);
+        try {
+            await this.pubsub.emit(topicName, data,);
+        } catch (error) {
+            console.error(`Publish message error: \n${error}`);
+        }
     }
 
     private async sendToSatMessage(data: EmittedMessage<DataPayload>): Promise<void> {
